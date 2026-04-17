@@ -27,6 +27,13 @@ The calculator itself should only:
 - evaluate available discounts
 - pick the best result
 
+## Current state
+
+Basic domain layer is implemented:
+- Money (with validation and currency handling)
+- CartItem
+- custom exceptions
+
 ## Project structure (init)
 
     src/discount_calculator/
@@ -44,7 +51,6 @@ The calculator itself should only:
 
 ## Planned next steps:
 
-- basic domain models (Money, CartItem)
 - discount implementations (base abstract)
 - calculator logic
 - tests (unit + func)
