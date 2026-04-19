@@ -18,8 +18,8 @@ class CartItem:
         if not self.code or not self.code.strip():
             raise ValidationError("Cart item code cannot be empty.")
 
-        if self.quantity < 0:
-            raise ValidationError("Cart item quantity cannot be negative.")
+        if self.quantity <= 0:
+            raise ValidationError("Cart item quantity must be greater than zero.")
 
     @property
     def base_total(self) -> Money:
