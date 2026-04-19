@@ -84,7 +84,7 @@ tests/
 From project root:
 
 ```
-PYTHONPATH=src pytest tests/ -v
+pytest tests/ -v
 ```
 
 ## Notes
