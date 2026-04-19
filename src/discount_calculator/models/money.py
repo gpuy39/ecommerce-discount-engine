@@ -6,7 +6,7 @@ from discount_calculator.exceptions.currency_errors import CurrencyMismatchError
 from discount_calculator.exceptions.validation_errors import ValidationError
 
 
-@dataclass
+@dataclass(frozen=True)
 class Money:
     """
     Simple value object representing money (amount in smallest unit + currency).
@@ -23,7 +23,7 @@ class Money:
         """
         Adds two money values (same currency required).
         """
-        self._ensure_same_currency(other)
+        self.ensure_same_currency(other)
         return Money(
             amount=self.amount + other.amount,
             currency=self.currency,
@@ -40,7 +40,7 @@ class Money:
             currency=self.currency,
         )
 
-    def _ensure_same_currency(self, other: Money) -> None:
+    def ensure_same_currency(self, other: Money) -> None:
         """
         Ensures both values use the same currency.
         """
